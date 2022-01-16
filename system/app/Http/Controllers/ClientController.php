@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-
+use App\Models\Cart;
+use App\Models\Checkout;
 
 class ClientController extends Controller
 {
@@ -59,5 +60,36 @@ class ClientController extends Controller
 
     $data['produk'] = $produk;
     return view('client.produkshop', $data);
+  }
+
+  function checkout(){
+    return view('client.checkout');
+  }
+
+  function postcheckout(){
+    $produk = new Checkout;
+    $produk->firtname = request('firtname');
+    $produk->lastname = request('lastname');
+    $produk->address = request('address');
+    $produk->phone = request('phone');
+    $produk->email = request('email');
+    // dd(request()->all());
+    $produk->save();
+
+    return redirect('shop');
+  }
+
+  function cart(){
+    return view('client.cart');
+  }
+
+  function postcart(){
+    $produk = new Cart;
+    $produk->nama_produk = request('nama_produk');
+    $produk->quantity = request('quantity');
+    // dd(request()->all());
+    $produk->save();
+
+    return redirect('checkout');
   }
 }

@@ -74,3 +74,15 @@ Route::get('alamat',[HomeController::class, 'showAlamat'] );
 // setting control
 Route::get('setting', [SettingController::class, 'index']);
 Route::post('setting', [SettingController::class, 'store']);
+
+//produk user controller
+Route::get('/', [ClientController::class, 'home']);
+Route::get('produk', [ClientController::class, 'produk']);
+Route::get('checkout', [ClientController::class, 'checkout']);
+Route::post('checkout', [ClientController::class, 'postcheckout']);
+
+//produk cart
+Route::get('/', [ClientController::class, 'home']);
+Route::get('produk', [ClientController::class, 'produk']);
+Route::get('cart', [ClientController::class, 'cart']);
+Route::post('cart', [ClientController::class, 'postcart']);

@@ -254,13 +254,13 @@
                         <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 margintop">
                            <div class="product_box" >
                               <img src="{{url("public/$produk->foto") }}" style="width:250px;height:200px;">
-                                            <a href="{{ url('/produkshop', $produk->id) }}" 
+                                            <a href="{{ url('/produkshop', $produk->uuid) }}" 
                                             class="h7 text-decoration-none">{{ $produk->nama }} </a>
                                             <hr>
                                             
                                         <p class="text-center mb-0"><h4>Rp.{{number_format($produk->harga)  }}</h4></p>
                                         <div>
-                                          <a href="{{url('keranjang')}}"><h3>Masukan keranjang</h3></a>
+                                          <a href="keranjang"><h3>Masukan keranjang</h3></a>
                                         </div>
 
                               

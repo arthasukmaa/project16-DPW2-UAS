@@ -48,7 +48,7 @@
 
                             <hr>
 
-                            <form action="{{ url('alamat') }}" method="GET">
+                           <form action="{{url('cart')}}" method="get" >
                                 <input type="hidden" name="product-title" value="Activewear">
                               
                                 
